@@ -1,13 +1,14 @@
 import { RequestHandler } from "express";
 
-import { User } from "../models/user";
+import  User  from "../models/user";
 
 
 export const createUser: RequestHandler = async (req, res, next) => {
-  let user = await User.create({ ...req.body });
-  return res
-    .status(201)
-    .json({ msg: "user create successfully", data: user });
+  var user = await User.create({ ...req.body });
+  console.log(user);
+  // return res
+  //   .status(200)
+  //   .json({ message: "Created successfully", data: users });
 };
 
 export const getAllUser: RequestHandler = async (req, res, next) => {
